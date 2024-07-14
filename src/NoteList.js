@@ -5,7 +5,7 @@ import { GoogleLogin } from '@react-oauth/google';
 function NoteList({ notes }) {
   return notes.length > 0 ? (
     <ul>
-      {notes.map((note, index) => (
+      {notes?.map((note, index) => (
         <NoteItem note={note} index={index} key={`node-item-${index}`} />
       ))}
     </ul>
