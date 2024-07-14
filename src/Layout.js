@@ -168,9 +168,8 @@ function Layout() {
           "Authentication": aToken
         }
       }
-    );
-    const data = await res.json();
-    setNotes(data.data);
+    ).then(data => res.json()).then(data =>
+    setNotes(data.data || [])
   }
 
   const addNote = () => {
